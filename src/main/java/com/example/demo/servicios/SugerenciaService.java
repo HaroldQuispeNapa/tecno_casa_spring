@@ -18,4 +18,8 @@ public class SugerenciaService {
         return (List<Sugerencia>) repo.findAll();
     }
 
+    public Sugerencia guardarSugerencia(Sugerencia sugerencia) {
+        return repo.save(sugerencia);
+    }
+
 }
