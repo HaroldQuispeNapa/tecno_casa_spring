@@ -20,6 +20,10 @@ public class ProductoService {
     public Optional<Producto> getBuscarProductoById(Integer id) {
         return productoRepositorio.findById(id);
     }
+
+    public List<Producto> getBuscarPorModelo(String termino) {
+        return productoRepositorio.findByModeloContainingIgnoreCase(termino);
+    }
     
 
 }

@@ -12,9 +12,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-
-
-
 @RestController
 @RequestMapping("/productos")
 @CrossOrigin(origins = "*")
@@ -28,9 +25,9 @@ public class ProductoController {
         return servicio.getListarProductos();
     }
 
-    @GetMapping("/buscar/{id}") 
+    @GetMapping("/buscar/{id}")
     public ResponseEntity<Producto> buscarPorId(@PathVariable Integer id) {
-        
+
         Optional<Producto> producto = servicio.getBuscarProductoById(id);
 
         if (producto.isPresent()) {
@@ -38,6 +35,11 @@ public class ProductoController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @GetMapping("/buscar-modelo/{termino}")
+    public List<Producto> BuscarPorModelo(@PathVariable String termino) {
+        return servicio.getBuscarPorModelo(termino);
     }
 
 }
