@@ -1,13 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.example.demo.modelo.repositorio;
 
-/**
- *
- * @author efrai
- */
-public class IProductosReposiorio {
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+import com.example.demo.modelo.entidades.Producto;
+
+@Repository
+public interface IProductosReposiorio extends CrudRepository<Producto, Integer>{
+
     
-}
+} 
